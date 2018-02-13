@@ -16,8 +16,19 @@ import com.forex.jExpertAdvisor.web.WebQuerySender;
 
 public  class TradeMgr implements ITradesMgr {
 	
+	private static TradeMgr instance = null;
 	
+	public static TradeMgr getInstance() {
+		if(instance == null)
+			return new TradeMgr();
+		return instance;
+	}
 	
+
+	private TradeMgr() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void open(IStrategy strategy, StopLoss stoploss, TradeType type) {

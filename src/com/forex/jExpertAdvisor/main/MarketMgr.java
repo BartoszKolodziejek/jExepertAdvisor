@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.forex.jExpertAdvisor.candles.Candle;
+import com.forex.jExpertAdvisor.trades.ExistingTrades;
 import com.forex.jExpertAdvisor.trades.TradeConfig;
+import com.forex.jExpertAdvisor.trades.TradeMgr;
 
 public class MarketMgr {
 	
@@ -21,6 +23,14 @@ public class MarketMgr {
 	public void update() {
 		TradeConfig.getInstance().nextVal();
 		//TODO perform spread
+		ExistingTrades.getInstance().forEach((k, t) -> {
+			try {
+				TradeMgr.getInstance().updatePosition(t);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
