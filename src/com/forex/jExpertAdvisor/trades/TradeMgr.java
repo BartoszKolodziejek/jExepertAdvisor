@@ -20,14 +20,14 @@ public  class TradeMgr implements ITradesMgr {
 	
 
 	@Override
-	public void open(Strategy strategy, StopLoss stoploss, TradeType type) {
+	public void open(IStrategy strategy, StopLoss stoploss, TradeType type) {
 		Map<String, String> params = new HashMap<>();
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yy HH-mm");
 		params.put("date_open", df.format(new Date()));
 		
 		params.put("strategy", strategy.getClass().getName());
 		params.put("symbol", TradeConfig.getSymbol());
-		params.put("opne_price", MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getCurrentSubcandle()).toString());
+		params.put("opne_price", MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).toString());
 		params.put("status", "0");
 		params.put("account", TradeConfig.getAccount());
 		params.put("stoploss", stoploss.toString());
@@ -36,7 +36,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("type", type.toString());
 	try {
 		WebQuerySender.getInstance().send("http://localhost/insertactivetrades", params);
-		Trade trade = new Trade((MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getCurrentSubcandle()).getClose()),new BigDecimal(0), new Date(), stoploss, type );
+		Trade trade = new Trade((MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose()),new BigDecimal(0), new Date(), stoploss, type );
 		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
@@ -52,7 +52,7 @@ public  class TradeMgr implements ITradesMgr {
 		
 		Map<String, String> params = new HashMap<>();
 		params.put("open", trade.getOpen().toString());
-		params.put("close",  MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getCurrentSubcandle()).toString());
+		params.put("close",  MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).toString());
 		params.put("type", trade.getType().toString());
 		WebQuerySender.getInstance().send("http://localhost:2137/get_result", params);
 		String response = WebQuerySender.getInstance().getResponse();
@@ -66,7 +66,7 @@ public  class TradeMgr implements ITradesMgr {
 	public void updatePosition(Trade trade) throws Exception {
 		Map<String, String> params = new HashMap<>();
 		params.put("open", trade.getOpen().toString());
-		params.put("close",  MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getCurrentSubcandle()).toString());
+		params.put("close",  MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).toString());
 		params.put("type", trade.getType().toString());
 		WebQuerySender.getInstance().send("http://localhost:2137/get_result", params);
 		String response = WebQuerySender.getInstance().getResponse();

@@ -1,9 +1,11 @@
 package com.forex.jExpertAdvisor.main;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.forex.jExpertAdvisor.candles.Candle;
+import com.forex.jExpertAdvisor.trades.TradeConfig;
 
 public class MarketMgr {
 	
@@ -11,10 +13,60 @@ public class MarketMgr {
 	
 	private  String interval;
 	
+	private BigDecimal ask;
+	private BigDecimal bid;
+	private int currentCandle;
+	private boolean isEnd;
+	
+	public void update() {
+		TradeConfig.getInstance().nextVal();
+		//TODO perform spread
+		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
+		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
+		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
+			currentCandle++;
+		if(currentCandle>=historicView.size())
+			isEnd=true;
+		
+		
+	}
 	
 	
 	
 	
+	
+	public BigDecimal getAsk() {
+		return ask;
+	}
+
+
+
+
+
+	public BigDecimal getBid() {
+		return bid;
+	}
+
+
+
+
+
+	public int getCurrentCandle() {
+		return currentCandle;
+	}
+
+
+
+
+
+	public boolean isEnd() {
+		return isEnd;
+	}
+
+
+
+
+
 	public  String getInterval() {
 		return interval;
 	}
@@ -32,6 +84,7 @@ public class MarketMgr {
 
 	public void setHistoricView(List<Candle> historicView) {
 		this.historicView = historicView;
+		int currentCandle = historicView.size()/2;
 	}
 
 

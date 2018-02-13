@@ -1,21 +1,38 @@
 package com.forex.jExpertAdvisor.trades;
 
+import java.math.BigDecimal;
+
 public class TradeConfig {
 	
 	
 	private static TradeConfig instance = null;
 	private static String account = "test";
 	private static String symbol;
-	private static int currentSubcandle;
+	private  int currentSubcandle;
+	private final  int maxSubcandle;
+	private static int max;
+	
+	
+	
+	
+	
 	
 	
 
-	public static int getCurrentSubcandle() {
+	
+
+	public static void setMax(int max) {
+		TradeConfig.max = max;
+	}
+
+	public  int getCurrentSubcandle() {
 		return currentSubcandle;
 	}
 
-	public static int nextVal() {
-		TradeConfig.currentSubcandle++;
+	public  int nextVal() {
+		this.currentSubcandle++;
+		if(currentSubcandle>maxSubcandle)
+			currentSubcandle=0;
 		return currentSubcandle;
 		
 	}
@@ -35,13 +52,13 @@ public class TradeConfig {
 	static void setAccount(String account) {
 		TradeConfig.account = account;
 	}
-private TradeConfig() {
-	
+private TradeConfig(Integer maxSubcandle) {
+	this.maxSubcandle = maxSubcandle;
 }
 
 public static TradeConfig getInstance() {
 	if(instance==null)
-		return new TradeConfig();
+		return new TradeConfig(max);
 	return instance;
 }
 
