@@ -58,7 +58,7 @@ public class TradeConfig {
 
 public static TradeConfig getInstance() {
 	if(instance==null)
-		return new TradeConfig(max);
+		instance= new TradeConfig(max);
 	return instance;
 }
 

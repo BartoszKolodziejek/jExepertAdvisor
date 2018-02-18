@@ -22,7 +22,7 @@ public class ExistingTrades extends HashMap<Long, Trade> {
 	
 	public static ExistingTrades getInstance() {
 		if(instance == null)
-			return new ExistingTrades();
+			instance =  new ExistingTrades();
 		return instance;
 	}
 	

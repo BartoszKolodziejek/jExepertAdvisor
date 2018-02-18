@@ -110,7 +110,7 @@ public class MarketMgr {
 	
 	public static MarketMgr getInstance() {
 		if(instance==null)
-			return new MarketMgr();
+			instance = new MarketMgr();
 		return instance;
 	}
 }

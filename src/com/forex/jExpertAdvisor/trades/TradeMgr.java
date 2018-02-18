@@ -21,7 +21,7 @@ public  class TradeMgr implements ITradesMgr {
 	public static TradeMgr getInstance() {
 		
 		if(instance == null)
-			return new TradeMgr();
+			instance=new  TradeMgr();
 		return instance;
 	}
 	

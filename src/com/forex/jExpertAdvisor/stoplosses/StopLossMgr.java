@@ -15,7 +15,7 @@ public class StopLossMgr {
 	
 	public static StopLossMgr getInstance() {
 		if(instance==null)
-			return new StopLossMgr();
+			instance =  new StopLossMgr();
 		return instance;
 	}
 	
