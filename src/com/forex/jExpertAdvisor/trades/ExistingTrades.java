@@ -8,7 +8,7 @@ public class ExistingTrades extends HashMap<Long, Trade> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static ExistingTrades instance = null;
+	protected static ExistingTrades instance = null;
 	private static Long iter = new Long(-1);
 	
 	

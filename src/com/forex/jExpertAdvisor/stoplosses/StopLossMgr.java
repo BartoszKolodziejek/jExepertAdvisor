@@ -3,7 +3,7 @@ package com.forex.jExpertAdvisor.stoplosses;
 public class StopLossMgr {
 	
 	
-	private static  StopLossMgr instance;
+	protected static  StopLossMgr instance;
 	
 	protected StopLossMgr() {
 		
