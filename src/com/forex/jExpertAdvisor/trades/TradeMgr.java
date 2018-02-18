@@ -43,7 +43,7 @@ public  class TradeMgr implements ITradesMgr {
 	@Override
 	public void open(IStrategy strategy, StopLoss stoploss, TradeType type) {
 		Map<String, String> params = new HashMap<>();
-		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yy HH-mm");
+		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
 		params.put("date_open", df.format(new Date()));
 		
 		params.put("strategy", strategy.getClass().getName());
