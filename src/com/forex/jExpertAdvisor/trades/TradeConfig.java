@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class TradeConfig {
 	
 	
-	private static TradeConfig instance = null;
+	protected static TradeConfig instance = null;
 	private static String account = "test";
 	private static String symbol;
 	private  int currentSubcandle;
