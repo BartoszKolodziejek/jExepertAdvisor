@@ -87,7 +87,7 @@ public  class TradeMgr implements ITradesMgr {
 	public void updatePosition(Trade trade) throws Exception {
 		Map<String, String> params = new HashMap<>();
 		params.put("open", trade.getOpen().toString());
-		params.put("close",  MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).toString());
+		params.put("close",  MarketMgr.getInstance().getAsk().toString());
 		params.put("type", trade.getType().toString());
 		WebQuerySender.getInstance().send("http://localhost:2137/get_result", params);
 		String response = WebQuerySender.getInstance().getResponse();
