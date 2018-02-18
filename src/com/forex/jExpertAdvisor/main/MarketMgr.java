@@ -103,7 +103,7 @@ public class MarketMgr {
 
 	private static MarketMgr instance = null;
 	
-	private MarketMgr() {
+	protected MarketMgr() {
 		
 	}
 

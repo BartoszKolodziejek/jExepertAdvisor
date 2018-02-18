@@ -16,7 +16,7 @@ public class ExistingTrades extends HashMap<Long, Trade> {
 		return iter++;
 	}
 	
-	private ExistingTrades() {
+	protected ExistingTrades() {
 		
 	}
 	

@@ -5,7 +5,7 @@ public class StopLossMgr {
 	
 	private static  StopLossMgr instance;
 	
-	private StopLossMgr() {
+	protected StopLossMgr() {
 		
 	}
 	

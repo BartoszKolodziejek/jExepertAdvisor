@@ -16,14 +16,24 @@ import com.forex.jExpertAdvisor.web.WebQuerySender;
 
 public  class TradeMgr implements ITradesMgr {
 	
-	private static TradeMgr instance = null;
+	protected static TradeMgr instance = null;
 	
 	public static TradeMgr getInstance() {
+		
 		if(instance == null)
 			return new TradeMgr();
 		return instance;
 	}
 	
+
+	
+	
+	protected static void setInstance(TradeMgr instance) {
+		TradeMgr.instance = instance;
+	}
+
+
+
 
 	private TradeMgr() {
 		super();

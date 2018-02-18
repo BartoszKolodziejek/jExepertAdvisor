@@ -52,7 +52,7 @@ public class TradeConfig {
 	static void setAccount(String account) {
 		TradeConfig.account = account;
 	}
-private TradeConfig(Integer maxSubcandle) {
+	protected TradeConfig(Integer maxSubcandle) {
 	this.maxSubcandle = maxSubcandle;
 }
 
