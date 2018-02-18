@@ -93,6 +93,7 @@ public class MarketMgr {
 
 
 	public void setHistoricView(List<Candle> historicView) {
+		if(historicView!=null)
 		this.historicView = historicView;
 		int currentCandle = historicView.size()/2;
 	}
