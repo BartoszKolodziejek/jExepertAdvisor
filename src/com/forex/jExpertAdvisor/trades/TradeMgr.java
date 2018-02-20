@@ -89,7 +89,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("open", trade.getOpen().toString());
 		params.put("close",  MarketMgr.getInstance().getAsk().toString());
 		params.put("type", trade.getType().toString());
-		WebQuerySender.getInstance().send("http://localhost:2137/get_result", params);
+		WebQuerySender.getInstance().send("http://127.0.0.1:2137/get_result", params);
 		String response = WebQuerySender.getInstance().getResponse();
 		//TODO - Handle with response
 		
