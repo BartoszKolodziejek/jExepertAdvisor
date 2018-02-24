@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
+import org.json.JSONObject;
 
 import com.forex.jExpertAdvisor.main.MarketMgr;
 import com.forex.jExpertAdvisor.stoplosses.StopLoss;
@@ -90,9 +91,9 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("close",  MarketMgr.getInstance().getAsk().toString());
 		params.put("type", trade.getType().toString());
 		WebQuerySender.getInstance().send("http://127.0.0.1:2137/get_result", params);
-		String response = WebQuerySender.getInstance().getResponse();
-		//TODO - Handle with response
 		
+		//TODO - Handle with response
+		JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "get_result");
 		// TODO Auto-generated method stub
 
 	}

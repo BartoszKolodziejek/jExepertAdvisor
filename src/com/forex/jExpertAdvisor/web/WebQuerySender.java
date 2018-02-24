@@ -1,6 +1,8 @@
 package com.forex.jExpertAdvisor.web;
 
 import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Map;
 
 import org.apache.http.HttpResponse;
@@ -8,6 +10,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.apache.commons.io.IOUtils;
 
 public class WebQuerySender {
 	
@@ -36,6 +41,18 @@ public class WebQuerySender {
 	return sb.toString();
 		}
 			
+	 
+	 public JSONObject getJson(String url, Map<String, String> params, String target){
+			try {
+				return new JSONObject(IOUtils.toString(new URL(getPametriziedUrl(params,  url + "/" + target)), Charset.forName("UTF-8")));
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+
+			}
+			return null;
+		}
 	 public String getResponse() throws Exception {
 		 
 		 return this.response.toString();
