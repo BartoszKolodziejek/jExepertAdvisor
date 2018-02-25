@@ -1,13 +1,16 @@
 package com.forex.jExpertAdvisor.main;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.forex.jExpertAdvisor.candles.Candle;
 import com.forex.jExpertAdvisor.trades.ExistingTrades;
 import com.forex.jExpertAdvisor.trades.TradeConfig;
 import com.forex.jExpertAdvisor.trades.TradeMgr;
+import com.forex.jExpertAdvisor.web.WebQuerySender;
 
 public class MarketMgr {
 	
@@ -35,8 +38,13 @@ public class MarketMgr {
 		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
 			currentCandle++;
-		if(currentCandle>=historicView.size())
-			isEnd=true;
+		if(currentCandle>=historicView.size()){
+			try {
+				WebQuerySender.getInstance().send("localhost:8090/closeAll", new HashMap<String, String>());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			isEnd=true;}
 		
 		
 	}

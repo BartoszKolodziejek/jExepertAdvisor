@@ -57,7 +57,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("stoploss_type", StopLossMgr.getInstance().getStopLossType(stoploss));
 		params.put("type", type.toString());
 	try {
-		WebQuerySender.getInstance().send("http://localhost/insertactivetrades", params);
+		WebQuerySender.getInstance().send("http://localhost:8090/insertactivetrades", params);
 		Trade trade = new Trade((MarketMgr.getInstance().getHistoricView().get(MarketMgr.getInstance().getHistoricView().size()-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose()),new BigDecimal(0), new Date(), stoploss, type );
 		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );
 	} catch (IOException e) {
@@ -90,11 +90,14 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("open", trade.getOpen().toString());
 		params.put("close",  MarketMgr.getInstance().getAsk().toString());
 		params.put("type", trade.getType().toString());
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-HH:mm:ss:S");
 		WebQuerySender.getInstance().send("http://127.0.0.1:2137/get_result", params);
-		
-		//TODO - Handle with response
 		JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "get_result");
-		// TODO Auto-generated method stub
+		params.clear();
+		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
+		params.put("result", (String) json.get("result"));
+		WebQuerySender.getInstance().send("localhost:8090/update", params);
+
 
 	}
 
