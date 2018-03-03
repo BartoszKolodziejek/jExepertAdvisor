@@ -44,7 +44,8 @@ public  class TradeMgr implements ITradesMgr {
 	}
 
 	@Override
-	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, BigDecimal size) {
+	public void open(IStrategy strategy, StopLoss stoploss, TradeType type) {
+		BigDecimal size = TradeConfig.getInstance().getSize();
 		Map<String, String> params = new HashMap<>();
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
 		params.put("date_open", df.format(MarketMgr.getInstance().getCurrentCandle().getDate()));

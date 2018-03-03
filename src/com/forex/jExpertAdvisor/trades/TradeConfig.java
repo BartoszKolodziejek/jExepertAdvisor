@@ -11,15 +11,16 @@ public class TradeConfig {
 	private  int currentSubcandle;
 	private final  int maxSubcandle;
 	private static int max;
-	
-	
-	
-	
-	
-	
-	
+	private BigDecimal size;
 
-	
+
+	public BigDecimal getSize() {
+		return size;
+	}
+
+	public void setSize(BigDecimal size) {
+		this.size = size;
+	}
 
 	public static void setMax(int max) {
 		TradeConfig.max = max;

@@ -14,5 +14,5 @@ public interface ITradesMgr {
 
 	void close(Trade trade) throws Exception, IOException;
 
-	void open(IStrategy strategy, StopLoss stoploss, TradeType type, BigDecimal size);
+	void open(IStrategy strategy, StopLoss stoploss, TradeType type);
 }
