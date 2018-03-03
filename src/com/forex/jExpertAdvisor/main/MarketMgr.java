@@ -5,14 +5,20 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.forex.jExpertAdvisor.candles.Candle;
 import com.forex.jExpertAdvisor.trades.ExistingTrades;
 import com.forex.jExpertAdvisor.trades.TradeConfig;
 import com.forex.jExpertAdvisor.trades.TradeMgr;
 import com.forex.jExpertAdvisor.web.WebQuerySender;
+import com.sun.javafx.collections.MappingChange;
+import org.json.JSONObject;
 
 public class MarketMgr {
+
+	private static BigDecimal balance;
+
 	
 	private List<Candle> historicView = new ArrayList<>();
 	
@@ -22,7 +28,9 @@ public class MarketMgr {
 	private BigDecimal bid;
 	private int currentCandle;
 	private boolean isEnd;
-	
+
+
+
 	public void update() {
 		TradeConfig.getInstance().nextVal();
 		//TODO perform spread
@@ -69,8 +77,8 @@ public class MarketMgr {
 
 
 
-	public int getCurrentCandle() {
-		return currentCandle;
+	public Candle getCurrentCandle() {
+		return historicView.get(currentCandle);
 	}
 
 
@@ -103,7 +111,7 @@ public class MarketMgr {
 	public void setHistoricView(List<Candle> historicView) {
 		if(historicView!=null)
 		this.historicView = historicView;
-		int currentCandle = this.historicView.size()/2;
+		 this.currentCandle = this.historicView.size()/2;
 	}
 
 
@@ -117,8 +125,12 @@ public class MarketMgr {
 
 	
 	public static MarketMgr getInstance() {
-		if(instance==null)
-			instance = new MarketMgr();
+		if(instance==null){
+			Map<String,String> param = new HashMap<>();
+			param.put("name", "test");
+            JSONObject account = WebQuerySender.getInstance().getJson("http://localhost:8090" , param,"get_account");
+            balance = account.getBigDecimal("deposit");
+			instance = new MarketMgr();}
 		return instance;
 	}
 }

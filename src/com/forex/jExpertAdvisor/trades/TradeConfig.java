@@ -45,7 +45,7 @@ public class TradeConfig {
 		TradeConfig.symbol = symbol;
 	}
 
-	static String getAccount() {
+	public static String getAccount() {
 		return account;
 	}
 
