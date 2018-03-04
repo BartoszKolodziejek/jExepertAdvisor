@@ -58,6 +58,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("interval", MarketMgr.getInstance().getInterval());
 		params.put("stoploss_type", StopLossMgr.getInstance().getStopLossType(stoploss));
 		params.put("type", type.toString());
+		params.put("size", size.toString());
 	try {
 		WebQuerySender.getInstance().send("http://localhost:8090/insertactivetrades", params);
 		params.clear();
@@ -68,7 +69,7 @@ public  class TradeMgr implements ITradesMgr {
 		WebQuerySender.getInstance().send("http://localhost/getrate", params);
 		Thread.sleep(500);
 		params.put("base", accountObject.getString("currency"));
-		params.put("target", TradeConfig.getSymbol().substring(0,2));
+		params.put("target", TradeConfig.getSymbol().substring(0,3));
         JSONObject object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");
 
 		Trade trade = new Trade(MarketMgr.getInstance().getAsk(),new BigDecimal(0), new Date(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))));
