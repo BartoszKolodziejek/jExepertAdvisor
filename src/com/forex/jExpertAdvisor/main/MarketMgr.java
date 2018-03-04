@@ -129,7 +129,7 @@ public class MarketMgr {
 			Map<String,String> param = new HashMap<>();
 			param.put("name", "test");
             JSONObject account = WebQuerySender.getInstance().getJson("http://localhost:8090" , param,"get_account");
-            balance = account.getBigDecimal("deposit");
+            balance = new BigDecimal(account.getString("deposit"));
 			instance = new MarketMgr();}
 		return instance;
 	}

@@ -71,7 +71,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("target", TradeConfig.getSymbol().substring(0,2));
         JSONObject object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");
 
-		Trade trade = new Trade(MarketMgr.getInstance().getAsk(),new BigDecimal(0), new Date(), stoploss, type, size, calculator.calculatePoint(size, object.getBigDecimal("rate")));
+		Trade trade = new Trade(MarketMgr.getInstance().getAsk(),new BigDecimal(0), new Date(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))));
 		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
@@ -120,7 +120,7 @@ public  class TradeMgr implements ITradesMgr {
 			params.put("size", size.toString());
 			params.put("rate", rate.toString());
 			JSONObject jsonObject = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "calculate_point");
-			return jsonObject.getBigDecimal("point");
+			return new BigDecimal(jsonObject.getString("point"));
 		}
 		public BigDecimal calculateResult(Trade trade){
 			Map<String, String> params = new HashMap<>();
@@ -130,7 +130,7 @@ public  class TradeMgr implements ITradesMgr {
 			params.put("point", trade.getPoint().toString());
 
 			JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "get_result");
-			return json.getBigDecimal("result");
+			return new BigDecimal(json.getString("result"));
 		}
 
 
