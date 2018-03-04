@@ -51,7 +51,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("date_open", df.format(MarketMgr.getInstance().getCurrentCandle().getDate()));
 		params.put("strategy", strategy.getClass().getName());
 		params.put("symbol", TradeConfig.getSymbol());
-		params.put("opne_price", MarketMgr.getInstance().getAsk().toString());
+		params.put("open_price", MarketMgr.getInstance().getAsk().toString());
 		params.put("status", "0");
 		params.put("account", TradeConfig.getAccount());
 		params.put("stoploss", stoploss.toString());
