@@ -72,7 +72,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("target", TradeConfig.getSymbol().substring(3));
         JSONObject object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");
 
-		Trade trade = new Trade(MarketMgr.getInstance().getAsk(),new BigDecimal(0), new Date(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))));
+		Trade trade = new Trade(MarketMgr.getInstance().getAsk(),new BigDecimal(0), MarketMgr.getInstance().getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))));
 		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
