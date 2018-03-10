@@ -106,7 +106,7 @@ public  class TradeMgr implements ITradesMgr {
 
 		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
 		params.put("result", calculator.calculateResult(trade).toString());
-		WebQuerySender.getInstance().send("localhost:8090/update", params);
+		WebQuerySender.getInstance().send("http://localhost:8090/update", params);
 
 
 
