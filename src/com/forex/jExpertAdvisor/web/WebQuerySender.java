@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -17,6 +18,7 @@ import org.apache.commons.io.IOUtils;
 public class WebQuerySender {
 	
 	private HttpResponse response = null;
+	private final static Logger logger = Logger.getLogger(WebQuerySender.class.getName());
 	
 	 private WebQuerySender() {
 		 
@@ -62,8 +64,8 @@ public class WebQuerySender {
 	 public void send(String url, Map<String, String> params) throws ClientProtocolException, IOException {
 		 HttpClient client = HttpClientBuilder.create().build();
 		 
-		    HttpGet request = new HttpGet(getPametriziedUrl(params, url + "/" ));
-		    System.out.println(getPametriziedUrl(params,  url + "/" ));
+		    HttpGet request = new HttpGet(getPametriziedUrl(params, url ));
+		    logger.info(getPametriziedUrl(params,  url  ));
 		    HttpResponse response = client.execute(request);
 		    this.response = response;
 
