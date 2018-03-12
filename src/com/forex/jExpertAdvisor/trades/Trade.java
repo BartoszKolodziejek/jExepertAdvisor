@@ -13,10 +13,10 @@ public class Trade {
 	private BigDecimal profit;
 	private final Date dateOpen;
 	private final BigDecimal size;
-	
 	private final StopLoss stoploss;
 	private TradeType type;
 	private BigDecimal point;
+	private final IStrategy strategy;
 
 	public BigDecimal getPoint() {
 		return point;
@@ -29,7 +29,7 @@ public class Trade {
 		public TradeType getType() {
 		return type;
 	}
-	public Trade(BigDecimal open, BigDecimal profit, Date dateOpen, StopLoss stoploss, TradeType type, BigDecimal size, BigDecimal point) {
+	public Trade(BigDecimal open, BigDecimal profit, Date dateOpen, StopLoss stoploss, TradeType type, BigDecimal size, BigDecimal point, IStrategy strategy) {
 		super();
 		this.point = point;
 		this.size = size.multiply(new BigDecimal(100000));
@@ -38,9 +38,14 @@ public class Trade {
 		this.dateOpen = dateOpen;
 		this.stoploss = stoploss;
 		this.type = type;
+		this.strategy = strategy;
 	}
 
-	public BigDecimal getSize() {
+    public IStrategy getStrategy() {
+        return strategy;
+    }
+
+    public BigDecimal getSize() {
 		return size;
 	}
 
