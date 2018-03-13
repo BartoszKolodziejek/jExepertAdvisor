@@ -30,6 +30,10 @@ public class TradeConfig {
 		return currentSubcandle;
 	}
 
+	public int getMaxSubcandle() {
+		return maxSubcandle;
+	}
+
 	public  int nextVal() {
 		this.currentSubcandle++;
 		if(currentSubcandle>maxSubcandle)
