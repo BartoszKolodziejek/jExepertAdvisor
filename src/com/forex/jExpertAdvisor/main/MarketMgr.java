@@ -10,6 +10,7 @@ import java.util.Map;
 
 import com.forex.jExpertAdvisor.candles.Candle;
 import com.forex.jExpertAdvisor.trades.ExistingTrades;
+import com.forex.jExpertAdvisor.trades.Trade;
 import com.forex.jExpertAdvisor.trades.TradeConfig;
 import com.forex.jExpertAdvisor.trades.TradeMgr;
 import com.forex.jExpertAdvisor.web.WebQuerySender;
@@ -35,14 +36,15 @@ public class MarketMgr {
 	public void update() {
 		TradeConfig.getInstance().nextVal();
 		//TODO perform spread
-		ExistingTrades.getInstance().forEach((k, t) -> {
+
+		for (Trade t : ExistingTrades.getInstance().values()){
 			try {
 				TradeMgr.getInstance().updatePosition(t);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		});
+		}
 		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
