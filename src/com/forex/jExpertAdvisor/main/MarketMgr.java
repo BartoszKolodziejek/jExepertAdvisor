@@ -2,6 +2,7 @@ package com.forex.jExpertAdvisor.main;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,6 +49,9 @@ public class MarketMgr {
 			currentCandle++;
 		if(currentCandle>=historicView.size()){
 			try {
+                Map<String,String> params = new HashMap<String, String>();
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
+                params.put("close",simpleDateFormat.format(historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getDate()) );
 				WebQuerySender.getInstance().send("localhost:8090/closeAll", new HashMap<String, String>());
 			} catch (IOException e) {
 				e.printStackTrace();
