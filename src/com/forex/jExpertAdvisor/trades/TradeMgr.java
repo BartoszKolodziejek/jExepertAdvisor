@@ -69,6 +69,7 @@ public  class TradeMgr implements ITradesMgr {
 		JSONObject accountObject = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "get_account");
 		params.clear();
 		params.put("date", df.format(MarketMgr.getInstance(symbol).getCurrentCandle().getDate()) );
+        params.put("symbol", symbol );
 		WebQuerySender.getInstance().send("http://localhost/getrate", params);
         JSONObject object;
 		do{
