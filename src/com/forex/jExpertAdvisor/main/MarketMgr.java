@@ -27,7 +27,7 @@ public class MarketMgr {
 	private int currentCandle;
 	private boolean isEnd;
 	private  String symbol;
-	private static Map<String, MarketMgr> instances = new LinkedHashMap<>();
+	private static Map<String, MarketMgr> instances;
 
 
 
@@ -132,6 +132,8 @@ public class MarketMgr {
 
 	
 	public static MarketMgr getInstance(String symbol) {
+	    if (instances==null)
+	        instances = new HashMap<>();
 		if(instances.get(symbol)==null)
 			instances.put(symbol,new MarketMgr());
 
