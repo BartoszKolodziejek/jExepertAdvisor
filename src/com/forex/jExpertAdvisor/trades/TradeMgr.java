@@ -128,7 +128,7 @@ public  class TradeMgr implements ITradesMgr {
 			params.put("rate", rate);
 			params.put("lavarage", lavarage);
 
-			JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "get_result");
+			JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "calculate_safelevel");
 			return new BigDecimal(json.getString("result"));
 		}
 
