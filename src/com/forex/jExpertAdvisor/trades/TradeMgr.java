@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONObject;
@@ -16,6 +17,8 @@ import com.forex.jExpertAdvisor.stoplosses.StopLossMgr;
 import com.forex.jExpertAdvisor.web.WebQuerySender;
 
 public  class TradeMgr implements ITradesMgr {
+
+	private final Logger logger = Logger.getLogger("TradeMgr");
 	
 	protected static TradeMgr instance = null;
 
@@ -74,9 +77,11 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("target", MarketMgr.getInstance(symbol).getSymbol().substring(3));
         object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");}
         while (object==null);
-
+		if(calculator.calculateSafeLevel(size.toString(), object.getString("rate"), accountObject.getString("lavarage") ).compareTo(new BigDecimal(accountObject.getString("deposit")))<0){
 		Trade trade = new Trade(MarketMgr.getInstance(symbol).getAsk(),new BigDecimal(0), MarketMgr.getInstance(symbol).getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))), strategy, symbol);
-		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );
+		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );}
+		else
+			System.out.println("Account balance is too low to open position on "+MarketMgr.getInstance(symbol).getSymbol());
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -114,6 +119,17 @@ public  class TradeMgr implements ITradesMgr {
 	}
 
 	private class Calculator{
+
+		public BigDecimal calculateSafeLevel( String size,  String rate, String lavarage){
+
+			Map<String, String> params = new HashMap<>();
+			params.put("size", size);
+			params.put("rate", rate);
+			params.put("lavarage", lavarage);
+
+			JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "get_result");
+			return new BigDecimal(json.getString("result"));
+		}
 
 
 		public BigDecimal calculatePoint(BigDecimal size, BigDecimal rate){
