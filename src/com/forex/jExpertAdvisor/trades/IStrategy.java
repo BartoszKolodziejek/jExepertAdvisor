@@ -1,12 +1,22 @@
 package com.forex.jExpertAdvisor.trades;
 
-public interface IStrategy {
+public abstract class IStrategy {
+
+
+	private String symbol;
+
+	public String getSymbol() {
+		return symbol;
+	}
+
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
+
+	public abstract void OnInit();
 	
-	
-	public void OnInit();
-	
-	public void OnDenit();
-	public void OnStart();
+	public abstract void OnDenit();
+	public abstract void OnStart();
 	
 
 }

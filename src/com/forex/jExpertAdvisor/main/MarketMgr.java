@@ -3,10 +3,7 @@ package com.forex.jExpertAdvisor.main;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.forex.jExpertAdvisor.candles.Candle;
 import com.forex.jExpertAdvisor.trades.ExistingTrades;
@@ -18,7 +15,7 @@ import org.json.JSONObject;
 
 public class MarketMgr {
 
-	private static BigDecimal balance;
+
 
 	
 	private List<Candle> historicView = new ArrayList<>();
@@ -29,6 +26,8 @@ public class MarketMgr {
 	private BigDecimal bid;
 	private int currentCandle;
 	private boolean isEnd;
+	private  String symbol;
+	private static Map<String, MarketMgr> instances = new LinkedHashMap<>();
 
 
 
@@ -119,22 +118,25 @@ public class MarketMgr {
 	}
 
 
+	public String getSymbol() {
+		return symbol;
+	}
 
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
 
-	protected static MarketMgr instance = null;
-	
 	protected MarketMgr() {
 		
 	}
 
 	
-	public static MarketMgr getInstance() {
-		if(instance==null){
-			Map<String,String> param = new HashMap<>();
-			param.put("name", "test");
-            JSONObject account = WebQuerySender.getInstance().getJson("http://localhost:8090" , param,"get_account");
-            balance = new BigDecimal(account.getString("deposit"));
-			instance = new MarketMgr();}
-		return instance;
+	public static MarketMgr getInstance(String symbol) {
+		if(instances.get(symbol)==null)
+			instances.put(symbol,new MarketMgr());
+
+
+
+		return instances.get(symbol);
 	}
 }

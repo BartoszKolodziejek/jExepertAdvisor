@@ -1,17 +1,22 @@
 package com.forex.jExpertAdvisor.trades;
 
+import com.forex.jExpertAdvisor.web.WebQuerySender;
+import org.json.JSONObject;
+
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TradeConfig {
 	
 	
 	protected static TradeConfig instance = null;
 	private static String account = "test";
-	private static String symbol;
 	private  int currentSubcandle;
 	private final  int maxSubcandle;
 	private static int max;
 	private BigDecimal size;
+	private static BigDecimal balance;
 
 
 	public BigDecimal getSize() {
@@ -42,13 +47,7 @@ public class TradeConfig {
 		
 	}
 
-	public static String getSymbol() {
-		return symbol;
-	}
 
-	public static void setSymbol(String symbol) {
-		TradeConfig.symbol = symbol;
-	}
 
 	public static String getAccount() {
 		return account;
@@ -62,8 +61,13 @@ public class TradeConfig {
 }
 
 public static TradeConfig getInstance() {
-	if(instance==null)
-		instance= new TradeConfig(max);
+	Map<String, String> param;
+	if(instance==null){
+		param = new HashMap<>();
+		param.put("name", "test");
+	JSONObject account = WebQuerySender.getInstance().getJson("http://localhost:8090" , param,"get_account");
+	balance = new BigDecimal(account.getString("deposit"));
+		instance= new TradeConfig(max);}
 	return instance;
 }
 

@@ -17,11 +17,15 @@ public class Trade {
 	private TradeType type;
 	private BigDecimal point;
 	private final IStrategy strategy;
+	private final String symbol;
 
 	public BigDecimal getPoint() {
 		return point;
 	}
 
+	public String getSymbol() {
+		return symbol;
+	}
 
 	public StopLoss getStoploss() {
 		return stoploss;
@@ -29,7 +33,7 @@ public class Trade {
 		public TradeType getType() {
 		return type;
 	}
-	public Trade(BigDecimal open, BigDecimal profit, Date dateOpen, StopLoss stoploss, TradeType type, BigDecimal size, BigDecimal point, IStrategy strategy) {
+	public Trade(BigDecimal open, BigDecimal profit, Date dateOpen, StopLoss stoploss, TradeType type, BigDecimal size, BigDecimal point, IStrategy strategy, String symbol) {
 		super();
 		this.point = point;
 		this.size = size.multiply(new BigDecimal(100000));
@@ -39,6 +43,7 @@ public class Trade {
 		this.stoploss = stoploss;
 		this.type = type;
 		this.strategy = strategy;
+		this.symbol = symbol;
 	}
 
     public IStrategy getStrategy() {
