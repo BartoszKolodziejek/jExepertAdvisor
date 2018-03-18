@@ -1,11 +1,22 @@
 package com.forex.jExpertAdvisor.trades;
 
+import java.math.BigDecimal;
+
 public abstract class IStrategy {
 
 
 	private String symbol;
+	private BigDecimal point;
 
-	public String getSymbol() {
+    public BigDecimal getPoint() {
+        return point;
+    }
+
+    public void setPoint(BigDecimal point) {
+        this.point = point;
+    }
+
+    public String getSymbol() {
 		return symbol;
 	}
 
