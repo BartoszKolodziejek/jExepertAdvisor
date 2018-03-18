@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import com.forex.jExpertAdvisor.stoplosses.MovingStopLoss;
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONObject;
 
@@ -114,6 +115,9 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
 		params.put("result", calculator.calculateResult(trade).toString());
 		WebQuerySender.getInstance().send("http://localhost:8090/update", params);
+		if(trade.getStoploss() instanceof MovingStopLoss){
+		    ((MovingStopLoss) trade.getStoploss()).move(trade);
+        }
 		if(MarketMgr.getInstance(trade.getSymbol()).getAsk().compareTo(trade.getStoploss().getLevel())<0 && trade.getType().equals(TradeType.BUY))
 			close(trade);
 		if(MarketMgr.getInstance(trade.getSymbol()).getBid().compareTo(trade.getStoploss().getLevel())>0 && trade.getType().equals(TradeType.SELL))
