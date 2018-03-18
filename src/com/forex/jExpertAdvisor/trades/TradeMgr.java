@@ -114,6 +114,11 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
 		params.put("result", calculator.calculateResult(trade).toString());
 		WebQuerySender.getInstance().send("http://localhost:8090/update", params);
+		if(MarketMgr.getInstance(trade.getSymbol()).getAsk().compareTo(trade.getStoploss().getLevel())<0 && trade.getType().equals(TradeType.BUY))
+			close(trade);
+		if(MarketMgr.getInstance(trade.getSymbol()).getBid().compareTo(trade.getStoploss().getLevel())>0 && trade.getType().equals(TradeType.SELL))
+			close(trade);
+
 
 
 
