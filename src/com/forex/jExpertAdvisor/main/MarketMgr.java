@@ -50,7 +50,7 @@ public class MarketMgr {
 			try {
                 Map<String,String> params = new HashMap<String, String>();
 				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
-                params.put("close",simpleDateFormat.format(historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()+TradeConfig.getInstance().getMaxSubcandle()-1).getDate()) );
+                params.put("close",simpleDateFormat.format(historicView.get(currentCandle-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()+TradeConfig.getInstance().getMaxSubcandle()-1).getDate()) );
 				WebQuerySender.getInstance().send("http://localhost:8090/closeAll", params);
 			} catch (IOException e) {
 				e.printStackTrace();
