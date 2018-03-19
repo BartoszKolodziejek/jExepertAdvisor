@@ -61,7 +61,8 @@ public class MarketMgr {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			isEnd=true;}
+			isEnd=true;
+			historicView.clear();}
 		
 		
 	}
