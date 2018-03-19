@@ -7,6 +7,7 @@ import java.util.*;
 
 import com.forex.jExpertAdvisor.candles.Candle;
 import com.forex.jExpertAdvisor.trades.ExistingTrades;
+import com.forex.jExpertAdvisor.trades.Trade;
 import com.forex.jExpertAdvisor.trades.TradeConfig;
 import com.forex.jExpertAdvisor.trades.TradeMgr;
 import com.forex.jExpertAdvisor.web.WebQuerySender;
@@ -52,6 +53,11 @@ public class MarketMgr {
 				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
                 params.put("close",simpleDateFormat.format(historicView.get(currentCandle-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()+TradeConfig.getInstance().getMaxSubcandle()-1).getDate()) );
 				WebQuerySender.getInstance().send("http://localhost:8090/closeAll", params);
+				for (Map.Entry<Long, Trade> entry: ExistingTrades.getInstance().entrySet()) {
+					if(entry.getValue().getSymbol().equals(getSymbol()))
+						ExistingTrades.getInstance().remove(entry.getKey());
+					
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
