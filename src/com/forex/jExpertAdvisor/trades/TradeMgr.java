@@ -102,6 +102,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("strategyName", trade.getStrategy().getClass().getName());
 		params.put("close",simpleDateFormat.format(MarketMgr.getInstance(trade.getSymbol()).getCurrentCandle().getDate()));
 		WebQuerySender.getInstance().send("http://localhost:8090/closeTrade", params);
+		ExistingTrades.getInstance().remove(trade);
 
 		
 
