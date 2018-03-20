@@ -62,6 +62,7 @@ public class MarketMgr {
 				e.printStackTrace();
 			}
 			isEnd=true;
+			if(isEnd)
 			historicView.clear();}
 		
 		
