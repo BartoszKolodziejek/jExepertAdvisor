@@ -100,7 +100,7 @@ public  class TradeMgr implements ITradesMgr {
 		Map<String, String> params = new HashMap<>();
 		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
 		params.put("strategyName", trade.getStrategy().getClass().getName());
-		params.put("close",simpleDateFormat.format(MarketMgr.getInstance(trade.getSymbol()).getCurrentCandle().getDate()));
+		params.put("closeDate",simpleDateFormat.format(MarketMgr.getInstance(trade.getSymbol()).getCurrentCandle().getDate()));
 		WebQuerySender.getInstance().send("http://localhost:8090/closeTrade", params);
 		ExistingTrades.getInstance().remove(trade);
 
