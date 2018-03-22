@@ -115,7 +115,7 @@ public  class TradeMgr implements ITradesMgr {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-HH:mm:ss:S");
 
 		params.put("date", simpleDateFormat.format(trade.getDateOpen()));
-		params.put("result", calculator.calculateResult(trade).toString());
+		params.put("result", calculator.calculateResult(trade).setScale(5).toString());
 		WebQuerySender.getInstance().send("http://localhost:8090/update", params);
 		if(trade.getStoploss() instanceof MovingStopLoss){
 		    ((MovingStopLoss) trade.getStoploss()).move(trade);
