@@ -9,7 +9,7 @@ public class ExistingTrades extends HashMap<Long, Trade> {
 	 */
 	private static final long serialVersionUID = 1L;
 	protected static ExistingTrades instance = null;
-	private static Long iter = new Long(-1);
+	private static Long iter = new Long(0);
 	
 	
 	public Long nextVal() {
