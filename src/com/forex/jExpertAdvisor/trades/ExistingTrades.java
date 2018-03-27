@@ -1,20 +1,17 @@
 package com.forex.jExpertAdvisor.trades;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
-public class ExistingTrades extends HashMap<Long, Trade> {
+public class ExistingTrades extends LinkedList<Trade> {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	protected static ExistingTrades instance = null;
-	private static Long iter = new Long(0);
-	
-	
-	public Long nextVal() {
-		return iter++;
-	}
+
+
 	
 	protected ExistingTrades() {
 		

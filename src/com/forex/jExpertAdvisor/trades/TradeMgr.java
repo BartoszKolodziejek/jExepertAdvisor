@@ -81,7 +81,7 @@ public  class TradeMgr implements ITradesMgr {
         while (object==null);
 		if(calculator.calculateSafeLevel(size.toString(), object.getString("rate"), accountObject.getString("lavarage") ).compareTo(new BigDecimal(accountObject.getString("deposit")))<0){
 		Trade trade = new Trade(MarketMgr.getInstance(symbol).getAsk(),new BigDecimal(0), MarketMgr.getInstance(symbol).getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))), strategy, symbol);
-		ExistingTrades.getInstance().put(ExistingTrades.getInstance().nextVal(), trade );}
+		ExistingTrades.getInstance().add(trade);}
 		else
 			System.out.println("Account balance is too low to open position on "+MarketMgr.getInstance(symbol).getSymbol());
 	} catch (IOException e) {

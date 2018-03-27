@@ -35,7 +35,7 @@ public class MarketMgr {
 	public void update() {
 		TradeConfig.getInstance().nextVal();
 		//TODO perform spread
-		ExistingTrades.getInstance().forEach((k, t) -> {
+		ExistingTrades.getInstance().forEach((t) -> {
 			try {
 				TradeMgr.getInstance().updatePosition(t);
 			} catch (Exception e) {
@@ -54,7 +54,7 @@ public class MarketMgr {
                 params.put("close",simpleDateFormat.format(historicView.get(currentCandle-1).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()+TradeConfig.getInstance().getMaxSubcandle()-1).getDate()) );
 				WebQuerySender.getInstance().send("http://localhost:8090/closeAll", params);
 
-				for (long i = ExistingTrades.getInstance().size()-1; i>=0; i--) {
+				for (int i = ExistingTrades.getInstance().size()-1; i>=0; i--) {
 					if(ExistingTrades.getInstance().get(i).getSymbol().equals(getSymbol()))
 						ExistingTrades.getInstance().remove(i);
 
