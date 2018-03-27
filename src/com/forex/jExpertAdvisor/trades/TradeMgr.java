@@ -49,9 +49,26 @@ public  class TradeMgr implements ITradesMgr {
 
 	@Override
 	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol) {
+		try {
 		BigDecimal size = TradeConfig.getInstance().getSize();
 		Map<String, String> params = new HashMap<>();
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
+			params.put("name", TradeConfig.getAccount());
+			JSONObject accountObject = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "get_account");
+			params.clear();
+			params.put("date", df.format(MarketMgr.getInstance(symbol).getCurrentCandle().getDate()) );
+		params.put("symbol", symbol );
+		WebQuerySender.getInstance().send("http://localhost/getrate", params);
+		JSONObject object;
+		do{
+			Thread.sleep(5000);
+			params.put("base", accountObject.getString("currency"));
+			params.put("target", MarketMgr.getInstance(symbol).getSymbol().substring(3));
+			object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");}
+		while (object==null);
+			params.clear();
+
+			if(calculator.calculateSafeLevel(size.toString(), object.getString("rate"), accountObject.getString("lavarage") ).compareTo(new BigDecimal(accountObject.getString("deposit")))<0){
 		params.put("date_open", df.format(MarketMgr.getInstance(symbol).getCurrentCandle().getDate()));
 		params.put("strategy", strategy.getClass().getName());
 		params.put("symbol", MarketMgr.getInstance(symbol).getSymbol());
@@ -63,23 +80,11 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("stoploss_type", StopLossMgr.getInstance().getStopLossType(stoploss));
 		params.put("type", type.toString());
 		params.put("size", size.toString());
-	try {
+
 		WebQuerySender.getInstance().send("http://localhost:8090/insertactivetrades", params);
-		params.clear();
-		params.put("name", TradeConfig.getAccount());
-		JSONObject accountObject = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "get_account");
-		params.clear();
-		params.put("date", df.format(MarketMgr.getInstance(symbol).getCurrentCandle().getDate()) );
-        params.put("symbol", symbol );
-		WebQuerySender.getInstance().send("http://localhost/getrate", params);
-        JSONObject object;
-		do{
-		Thread.sleep(5000);
-		params.put("base", accountObject.getString("currency"));
-		params.put("target", MarketMgr.getInstance(symbol).getSymbol().substring(3));
-        object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");}
-        while (object==null);
-		if(calculator.calculateSafeLevel(size.toString(), object.getString("rate"), accountObject.getString("lavarage") ).compareTo(new BigDecimal(accountObject.getString("deposit")))<0){
+
+
+
 		Trade trade = new Trade(MarketMgr.getInstance(symbol).getAsk(),new BigDecimal(0), MarketMgr.getInstance(symbol).getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))), strategy, symbol);
 		ExistingTrades.getInstance().add(trade);}
 		else
