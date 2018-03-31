@@ -12,7 +12,8 @@ public interface ITradesMgr {
 	
 	void updatePosition(Trade trade) throws ClientProtocolException, IOException, Exception;
 
-	void close(Trade trade) throws Exception, IOException;
+    void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size);
 
-	void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol);
+    void close(Trade trade) throws Exception, IOException;
+
 }

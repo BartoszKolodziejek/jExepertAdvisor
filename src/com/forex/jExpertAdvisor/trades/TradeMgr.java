@@ -48,9 +48,8 @@ public  class TradeMgr implements ITradesMgr {
 	}
 
 	@Override
-	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol) {
+	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size) {
 		try {
-		BigDecimal size = TradeConfig.getInstance().getSize();
 		Map<String, String> params = new HashMap<>();
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
 			params.put("name", TradeConfig.getAccount());
@@ -85,7 +84,7 @@ public  class TradeMgr implements ITradesMgr {
 
 
 
-		Trade trade = new Trade(MarketMgr.getInstance(symbol).getAsk(),new BigDecimal(0), MarketMgr.getInstance(symbol).getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate"))), strategy, symbol);
+		Trade trade = new Trade(MarketMgr.getInstance(symbol).getAsk(),new BigDecimal(0), MarketMgr.getInstance(symbol).getCurrentCandle().getDate(), stoploss, type, size, calculator.calculatePoint(size, new BigDecimal(object.getString("rate")), symbol), strategy, symbol);
 		ExistingTrades.getInstance().add(trade);}
 		else
 			System.out.println("Account balance is too low to open position on "+MarketMgr.getInstance(symbol).getSymbol());
@@ -150,8 +149,13 @@ public  class TradeMgr implements ITradesMgr {
 		}
 
 
-		public BigDecimal calculatePoint(BigDecimal size, BigDecimal rate){
+		public BigDecimal calculatePoint(BigDecimal size, BigDecimal rate, String symbol){
 			Map<String, String> params = new HashMap<>();
+			params.put("symbol",symbol );
+            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "getpoint");
+            params.clear();
+
+            params.put("step", getPoint.getString("point"));
 			params.put("size", size.toString());
 			params.put("rate", rate.toString());
 			JSONObject jsonObject = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "calculate_point");
@@ -159,6 +163,10 @@ public  class TradeMgr implements ITradesMgr {
 		}
 		public BigDecimal calculateResult(Trade trade){
 			Map<String, String> params = new HashMap<>();
+            params.put("symbol",trade.getSymbol() );
+            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "getpoint");
+            params.clear();
+            params.put("step", getPoint.getString("point"));
 			params.put("open", trade.getOpen().toString());
 			params.put("close",  MarketMgr.getInstance(trade.getSymbol()).getAsk().toString());
 			params.put("type", trade.getType().toString());

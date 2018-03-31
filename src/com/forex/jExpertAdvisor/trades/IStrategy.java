@@ -5,10 +5,19 @@ import java.math.BigDecimal;
 public abstract class IStrategy {
 
 
+	private BigDecimal size;
 	private String symbol;
 	private BigDecimal point;
 
-    public BigDecimal getPoint() {
+	public BigDecimal getSize() {
+		return size;
+	}
+
+	public void setSize(BigDecimal size) {
+		this.size = size;
+	}
+
+	public BigDecimal getPoint() {
         return point;
     }
 
