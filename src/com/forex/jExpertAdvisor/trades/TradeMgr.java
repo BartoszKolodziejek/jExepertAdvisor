@@ -144,6 +144,7 @@ public  class TradeMgr implements ITradesMgr {
 			params.put("rate", rate);
 			params.put("lavarage", lavarage);
 
+
 			JSONObject json = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "calculate_safelevel");
 			return new BigDecimal(json.getString("result"));
 		}
@@ -164,7 +165,7 @@ public  class TradeMgr implements ITradesMgr {
 		public BigDecimal calculateResult(Trade trade){
 			Map<String, String> params = new HashMap<>();
             params.put("symbol",trade.getSymbol() );
-            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "getpoint");
+            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getpoint");
             params.clear();
             params.put("step", getPoint.getString("point"));
 			params.put("open", trade.getOpen().toString());
