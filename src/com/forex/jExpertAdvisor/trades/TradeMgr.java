@@ -152,7 +152,7 @@ public  class TradeMgr implements ITradesMgr {
 		public BigDecimal calculatePoint(BigDecimal size, BigDecimal rate, String symbol){
 			Map<String, String> params = new HashMap<>();
 			params.put("symbol",symbol );
-            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:2137", params, "getpoint");
+            JSONObject getPoint = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getpoint");
             params.clear();
 
             params.put("step", getPoint.getString("point"));
