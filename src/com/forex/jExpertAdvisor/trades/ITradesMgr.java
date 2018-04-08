@@ -12,7 +12,7 @@ public interface ITradesMgr {
 	
 	void updatePosition(Trade trade) throws ClientProtocolException, IOException, Exception;
 
-    void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size);
+    void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size, String account);
 
     void close(Trade trade) throws Exception, IOException;
 

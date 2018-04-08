@@ -48,11 +48,11 @@ public  class TradeMgr implements ITradesMgr {
 	}
 
 	@Override
-	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size) {
+	public void open(IStrategy strategy, StopLoss stoploss, TradeType type, String symbol, BigDecimal size, String account) {
 		try {
 		Map<String, String> params = new HashMap<>();
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy-HH-mm");
-			params.put("name", TradeConfig.getAccount());
+			params.put("name", account);
 			JSONObject accountObject = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "get_account");
 			params.clear();
 			params.put("date", df.format(MarketMgr.getInstance(symbol).getCurrentCandle().getDate()) );
@@ -73,7 +73,7 @@ public  class TradeMgr implements ITradesMgr {
 		params.put("symbol", MarketMgr.getInstance(symbol).getSymbol());
 		params.put("open_price", MarketMgr.getInstance(symbol).getAsk().toString());
 		params.put("status", "0");
-		params.put("account", TradeConfig.getAccount());
+		params.put("account", account);
 		params.put("stoploss", stoploss.toString());
 		params.put("interval", MarketMgr.getInstance(symbol).getInterval());
 		params.put("stoploss_type", StopLossMgr.getInstance().getStopLossType(stoploss));
