@@ -43,8 +43,13 @@ public class MarketMgr {
 				e.printStackTrace();
 			}
 		});
+		try{
 		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
-		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
+		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();}
+		catch (Exception e){
+			ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-1).getClose();
+			bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-1).getClose();
+		}
 		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
 			currentCandle++;
 		if(currentCandle>=historicView.size()){
