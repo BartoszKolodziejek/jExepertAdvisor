@@ -47,8 +47,12 @@ public class MarketMgr {
 		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();}
 		catch (Exception e){
-			ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-1).getClose();
-			bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-1).getClose();
+		    int i = 0;
+		    do{
+			ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-i).getClose();
+			bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-i).getClose();
+		    i++;}
+		    while (historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()-i).getClose()==null);
 		}
 		if(TradeConfig.getInstance().getCurrentSubcandle()==0)
 			currentCandle++;
