@@ -36,6 +36,9 @@ public abstract class IStrategy {
 
     public String getSymbol() {
 		return symbol;
+
+
+
 	}
 
 	public void setSymbol(String symbol) {
