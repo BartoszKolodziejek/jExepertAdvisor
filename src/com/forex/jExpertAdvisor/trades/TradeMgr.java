@@ -62,7 +62,10 @@ public  class TradeMgr implements ITradesMgr {
 		do{
 			Thread.sleep(5000);
 			params.put("base", accountObject.getString("currency"));
+			if (symbol.matches("[A-Z]{6}"))
 			params.put("target", MarketMgr.getInstance(symbol).getSymbol().substring(3));
+			else
+				params.put("target", "USD");
 			object = WebQuerySender.getInstance().getJson("http://localhost:8090", params, "getrate");}
 		while (object==null);
 			params.clear();
