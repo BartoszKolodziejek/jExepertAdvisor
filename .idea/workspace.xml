@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ef3e4ad2-8e64-47f0-8915-3ed701508f23" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" afterPath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.properties" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ITradesMgr.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ITradesMgr.class" />
+      <change beforePath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" afterPath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TradeMgr.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TradeMgr.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+            <state relative-caret-position="154">
+              <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -89,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketMgr.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MarketMgr.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+              <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
               <folding>
                 <element signature="e#2801#2802#0" expanded="true" />
                 <element signature="e#2818#2819#0" expanded="true" />
@@ -168,6 +165,7 @@
       <find>localhost:2137/calculate_point</find>
       <find>test</find>
       <find>/getrate</find>
+      <find>setScale</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/ExistingTrades.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/ITradesMgr.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/IStrategy.java" />
-        <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" />
+        <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" />
       </list>
     </option>
   </component>
@@ -450,14 +448,7 @@
       <workItem from="1524719341379" duration="44000" />
       <workItem from="1525083695502" duration="750000" />
       <workItem from="1525342136469" duration="87000" />
-      <workItem from="1525716390194" duration="188000" />
-    </task>
-    <task id="LOCAL-00008" summary="changing target">
-      <created>1520180368265</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1520180368265</updated>
+      <workItem from="1525716390194" duration="864000" />
     </task>
     <task id="LOCAL-00009" summary="longer waiting">
       <created>1520620127616</created>
@@ -795,11 +786,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525083959668</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="concurent modification">
+      <created>1525716605671</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1525716605687</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99456000" />
+    <option name="totallyTimeSpent" value="100132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -819,6 +817,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21215352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -830,7 +829,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -868,7 +866,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Date problem resolved" />
     <MESSAGE value="closing implementation" />
     <MESSAGE value="fixing async problem" />
     <MESSAGE value="fixing closing problem" />
@@ -893,7 +890,8 @@
     <MESSAGE value="changing account" />
     <MESSAGE value="ask and bid" />
     <MESSAGE value="solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="solution" />
+    <MESSAGE value="concurent modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="concurent modification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1482,18 +1480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding>
             <element signature="e#2801#2802#0" expanded="true" />
             <element signature="e#2818#2819#0" expanded="true" />
@@ -1514,6 +1504,14 @@
             <element signature="e#3482#3483#0" expanded="true" />
             <element signature="e#3509#3510#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
