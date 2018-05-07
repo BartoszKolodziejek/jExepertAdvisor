@@ -3,20 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ef3e4ad2-8e64-47f0-8915-3ed701508f23" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" afterPath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/candles/Candle.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/candles/Candle.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/main/MarketMgr.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/main/MarketMgr.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/stoplosses/StopLoss.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/stoplosses/StopLoss.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/stoplosses/StopLossMgr.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/stoplosses/StopLossMgr.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ExistingTrades.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ExistingTrades.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/IStrategy.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/IStrategy.class" />
+      <change beforePath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" afterPath="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.properties" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/jExpertAdvisor/jExpertAdvisor/pom.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ITradesMgr.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/ITradesMgr.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/Trade.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/Trade.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeConfig.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeMgr$Calculator.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeMgr$Calculator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeMgr.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeMgr.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeType.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/trades/TradeType.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/web/WebQuerySender.class" afterPath="$PROJECT_DIR$/target/classes/com/forex/jExpertAdvisor/web/WebQuerySender.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TradeMgr.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TradeMgr.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="67" column="41" lean-forward="false" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="504">
+              <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -99,30 +89,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketMgr.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MarketMgr.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="459">
+              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
               <folding>
-                <element signature="e#2751#2752#0" expanded="true" />
-                <element signature="e#2768#2769#0" expanded="true" />
-                <element signature="e#2803#2804#0" expanded="true" />
-                <element signature="e#2820#2821#0" expanded="true" />
-                <element signature="e#2861#2862#0" expanded="true" />
-                <element signature="e#2908#2909#0" expanded="true" />
-                <element signature="e#2939#2940#0" expanded="true" />
+                <element signature="e#2801#2802#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
+                <element signature="e#2853#2854#0" expanded="true" />
+                <element signature="e#2870#2871#0" expanded="true" />
+                <element signature="e#2911#2912#0" expanded="true" />
                 <element signature="e#2958#2959#0" expanded="true" />
-                <element signature="e#2995#2996#0" expanded="true" />
-                <element signature="e#3017#3018#0" expanded="true" />
-                <element signature="e#3064#3065#0" expanded="true" />
-                <element signature="e#3095#3096#0" expanded="true" />
-                <element signature="e#3138#3139#0" expanded="true" />
-                <element signature="e#3164#3165#0" expanded="true" />
-                <element signature="e#3371#3372#0" expanded="true" />
-                <element signature="e#3391#3392#0" expanded="true" />
-                <element signature="e#3432#3433#0" expanded="true" />
-                <element signature="e#3459#3460#0" expanded="true" />
+                <element signature="e#2989#2990#0" expanded="true" />
+                <element signature="e#3008#3009#0" expanded="true" />
+                <element signature="e#3045#3046#0" expanded="true" />
+                <element signature="e#3067#3068#0" expanded="true" />
+                <element signature="e#3114#3115#0" expanded="true" />
+                <element signature="e#3145#3146#0" expanded="true" />
+                <element signature="e#3188#3189#0" expanded="true" />
+                <element signature="e#3214#3215#0" expanded="true" />
+                <element signature="e#3421#3422#0" expanded="true" />
+                <element signature="e#3441#3442#0" expanded="true" />
+                <element signature="e#3482#3483#0" expanded="true" />
+                <element signature="e#3509#3510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,8 +189,8 @@
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/ExistingTrades.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/ITradesMgr.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/IStrategy.java" />
-        <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" />
         <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java" />
+        <option value="$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java" />
       </list>
     </option>
   </component>
@@ -255,6 +245,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,8 +311,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +318,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents" />
-    <property name="SearchEverywhereHistoryKey" value="mark&#9;FILE&#9;file://C:/Users/barto/eclipse-workspace/jExpertAdvisor2/src/com/forex/jExpertAdvisor/main/MarketMgr.java&#10;Trad&#9;FILE&#9;file://C:/Users/barto/eclipse-workspace/jExpertAdvisor2/src/com/forex/jExpertAdvisor/trades/TradeConfig.java&#10;M&#9;PSI&#9;JAVA://com.forex.jExpertAdvisor.main.MarketMgr&#10;Trade&#9;PSI&#9;JAVA://com.forex.jExpertAdvisor.trades.TradeMgr" />
+    <property name="SearchEverywhereHistoryKey" value="M&#9;FILE&#9;file://C:/Users/barto/eclipse-workspace/jExpertAdvisor2/src/com/forex/jExpertAdvisor/main/MarketMgr.java&#10;mark&#9;FILE&#9;file://C:/Users/barto/eclipse-workspace/jExpertAdvisor2/src/com/forex/jExpertAdvisor/main/MarketMgr.java&#10;Trad&#9;FILE&#9;file://C:/Users/barto/eclipse-workspace/jExpertAdvisor2/src/com/forex/jExpertAdvisor/trades/TradeConfig.java&#10;Trade&#9;PSI&#9;JAVA://com.forex.jExpertAdvisor.trades.TradeMgr" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -458,14 +448,9 @@
       <workItem from="1524496685219" duration="4967000" />
       <workItem from="1524639777331" duration="2154000" />
       <workItem from="1524719341379" duration="44000" />
-      <workItem from="1525083695502" duration="238000" />
-    </task>
-    <task id="LOCAL-00007" summary="adding size in request">
-      <created>1520173469186</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1520173469186</updated>
+      <workItem from="1525083695502" duration="750000" />
+      <workItem from="1525342136469" duration="87000" />
+      <workItem from="1525716390194" duration="188000" />
     </task>
     <task id="LOCAL-00008" summary="changing target">
       <created>1520180368265</created>
@@ -803,11 +788,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524641276872</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="solution">
+      <created>1525083959668</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1525083959668</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98669000" />
+    <option name="totallyTimeSpent" value="99456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -825,9 +817,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21215352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -839,6 +830,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -964,24 +956,24 @@
         <state relative-caret-position="595">
           <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
           <folding>
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
             <element signature="e#2958#2959#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,24 +1060,24 @@
         <state relative-caret-position="1428">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
             <element signature="e#2958#2959#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1172,24 +1164,24 @@
         <state relative-caret-position="1564">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
             <element signature="e#2958#2959#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1267,24 +1259,24 @@
         <state relative-caret-position="1428">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
             <element signature="e#2958#2959#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1490,38 +1482,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java">
+    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-          <folding>
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2820#2821#0" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
-            <element signature="e#2958#2959#0" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="504">
+          <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/trades/TradeMgr.java">
+    <entry file="file://$PROJECT_DIR$/src/com/forex/jExpertAdvisor/main/MarketMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="67" column="41" lean-forward="false" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding>
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
+            <element signature="e#2958#2959#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

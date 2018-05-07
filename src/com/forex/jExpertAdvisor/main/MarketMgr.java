@@ -35,14 +35,15 @@ public class MarketMgr {
 	public void update() {
 		TradeConfig.getInstance().nextVal();
 		//TODO perform spread
-		ExistingTrades.getInstance().forEach((t) -> {
+
+		for (int j =ExistingTrades.getInstance().size()-1; j>=0; j--){
 			try {
-				TradeMgr.getInstance().updatePosition(t);
+				TradeMgr.getInstance().updatePosition(ExistingTrades.getInstance().get(j));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		});
+		}
 		try{
 		ask = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();
 		bid = historicView.get(currentCandle).getSubCandles().get(TradeConfig.getInstance().getCurrentSubcandle()).getClose();}
